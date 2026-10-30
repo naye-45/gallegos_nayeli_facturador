@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Tech</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+ 
+
+<!-- BARRA DE PROMOCIONES -->
+<div class="promo-top">
+    <span>🔥 OFERTAS GAMING</span>
+    <span>Hasta 20% de descuento en productos seleccionados</span>
+    <a href="#promociones">VER OFERTAS →</a>
+</div>
+
+<!-- NAVEGACIÓN PRINCIPAL -->
+<header class="header" id="inicio">
+
+    <div class="logo">
+        NEON<span>GAMING</span>
+    </div>
+/
+    <nav class="main-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#promociones">Promociones</a>
+        <a href="#ofertas">Ofertas</a>
+    </nav>
+
+    <div class="header-info">
+        <span class="online">SYSTEM ONLINE</span>
+
+        <button class="cart-button" id="openCart">
+            🛒 Mi carrito
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+    </div>
+
+</header>
+
+
+
+  <!-- Promociones -->
+  <div class="promo-top">
+    🔥 OFERTAS GAMING
+    <span>Hasta 20% de descuento en productos seleccionados</span>
+    <a href="#promociones">VER OFERTAS →</a>
+  </div>
+  
+  <section class="promotions" id="promociones">
+
+    <div class="promo-card">
+        <span class="promo-label">OFERTA DESTACADA</span>
+        <h2>GAMING WEEK</h2>
+        <p>Descuentos especiales en periféricos seleccionados.</p>
+        <a href="#catalogo">EXPLORAR PRODUCTOS →</a>
+    </div>
+
+    <div class="promo-card promo-secondary">
+        <span class="promo-label">PROMOCIÓN ESPECIAL</span>
+        <h2>UPGRADE YOUR SETUP</h2>
+        <p>Renueva tu estación gaming con tecnología de última generación.</p>
+        <a href="#catalogo">VER CATÁLOGO →</a>
+    </div>
+
+  </section>
+
+
+  <main class="layout">
+    <!-- CATÁLOGO -->
+    <section class="panel">
+      <h2>Catálogo</h2>
+      <div class="filtros">
+        <input type="search" id="buscar" placeholder="Buscar producto…">
+        <select id="categoria">
+          <option value="todas">Todas las categorías</option>
+          <option value="Periféricos">Periféricos</option>
+          <option value="Accesorios">Accesorios</option>
+          <option value="Pantallas">Pantallas</option>
+        </select>
+      </div>
+      <p id="sinResultados" class="vacio" hidden>No hay productos que coincidan con la búsqueda.</p>
+      <div id="catalogo" class="catalogo"></div>
+    </section>
+
+    <!-- CARRITO -->
+    <section class="panel">
+      <h2>Tu carrito</h2>
+      <p id="carritoVacio" class="vacio">Tu carrito está vacío. Agrega productos del catálogo.</p>
+      <ul id="listaCarrito" class="lista-carrito"></ul>
+
+      <label for="envio">Envío</label>
+      <select id="envio">
+        <option value="retiro">Retiro en el local</option>
+        <option value="cuenca">Envío dentro de Cuenca</option>
+        <option value="nacional">Envío nacional</option>
+      </select>
+
+      <div id="resumen" class="resumen"></div>
+
+      <div class="acciones">
+        <button type="button" id="btnConfirmar" class="principal" disabled>Confirmar pedido</button>
+        <button type="button" id="btnVaciar" class="secundario" disabled>Vaciar carrito</button>
+      </div>
+      <p id="mensaje" class="mensaje" hidden></p>
+    </section>
+  </main>
+
+  <!-- MODAL: confirmar eliminación de un producto -->
+  <div id="modal" class="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <h2 id="modal-titulo">¿Eliminar producto?</h2>
+      <p>Esta acción quitará el producto del carrito.</p>
+      <div class="modal-acciones">
+        <button type="button" id="btn-cancelar">Cancelar</button>
+        <button type="button" id="btn-confirmar" class="peligro">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
